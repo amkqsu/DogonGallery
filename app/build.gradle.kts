@@ -57,6 +57,12 @@ dependencies {
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
+    // Material İkonları için (FilterList, Folder, Schedule vb.)
+    implementation("androidx.compose.material:material-icons-extended")
+
+    // Compose için resim yükleme kütüphanesi (AsyncImage, coil vb.)
+    implementation("io.coil-kt:coil-compose:2.5.0")
+
 
     // Security Crypto
     implementation("androidx.security:security-crypto:1.1.0-alpha06")
