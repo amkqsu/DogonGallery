@@ -33,13 +33,36 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+
+    // Jetpack Compose'u aktif ediyoruz
+    buildFeatures {
+        compose = true
+    }
+    
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.1"
+    }
 }
 
 dependencies {
     implementation("androidx.core:core-ktx:1.12.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.11.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
     
+    // Jetpack Compose
+    implementation("androidx.activity:activity-compose:1.8.2")
+    val composeBom = platform("androidx.compose:compose-bom:2024.02.00")
+    implementation(composeBom)
+    implementation("androidx.compose.ui:ui")
+    implementation("androidx.compose.ui:ui-graphics")
+    implementation("androidx.compose.ui:ui-tooling-preview")
+    implementation("androidx.compose.material3:material3")
+
+    // Security Crypto
     implementation("androidx.security:security-crypto:1.1.0-alpha06")
+    
+    // ML Kit
     implementation("com.google.mlkit:image-labeling:17.0.9")
+
+    // await() fonksiyonu (Task'ler) için Coroutines Play Services desteği
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.3")
 }
