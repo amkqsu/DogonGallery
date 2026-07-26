@@ -4,7 +4,7 @@ import android.content.Context
 import android.net.Uri
 import com.google.mlkit.vision.common.InputImage
 import com.google.mlkit.vision.label.ImageLabeling
-import com.google.mlkit.vision.label.defaultmodel.ImageLabelerOptions
+import com.google.mlkit.vision.label.defaults.ImageLabelerOptions
 import kotlinx.coroutines.tasks.await
 import org.json.JSONObject
 
