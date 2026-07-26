@@ -39,8 +39,9 @@ android {
         compose = true
     }
     
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        composeOptions {
+        // 1.5.1 olan değeri 1.5.8 olarak değiştiriyoruz
+        kotlinCompilerExtensionVersion = "1.5.8"
     }
 }
 
