@@ -32,20 +32,24 @@ android {
     
     kotlinOptions {
         jvmTarget = "17"
+        freeCompilerArgs += listOf(
+            "-opt-in=androidx.compose.foundation.ExperimentalFoundationApi",
+            "-opt-in=androidx.compose.material3.ExperimentalMaterial3Api",
+            "-opt-in=androidx.compose.ui.ExperimentalComposeUiApi"
+        )
     }
 
-    // Jetpack Compose'u aktif ediyoruz
     buildFeatures {
         compose = true
     }
     
-        composeOptions {
-        // 1.5.1 olan değeri 1.5.8 olarak değiştiriyoruz
+    composeOptions {
         kotlinCompilerExtensionVersion = "1.5.8"
     }
 }
 
 dependencies {
+    // Core
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
     
@@ -57,12 +61,7 @@ dependencies {
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
-    // Material İkonları için (FilterList, Folder, Schedule vb.)
     implementation("androidx.compose.material:material-icons-extended")
-
-    // Compose için resim yükleme kütüphanesi (AsyncImage, coil vb.)
-    implementation("io.coil-kt:coil-compose:2.5.0")
-
 
     // Security Crypto
     implementation("androidx.security:security-crypto:1.1.0-alpha06")
@@ -70,6 +69,9 @@ dependencies {
     // ML Kit
     implementation("com.google.mlkit:image-labeling:17.0.9")
 
-    // await() fonksiyonu (Task'ler) için Coroutines Play Services desteği
+    // Coroutines Play Services (await için)
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.3")
+
+    // Coil (Görsel Yükleme)
+    implementation("io.coil-kt:coil-compose:2.5.0")
 }
